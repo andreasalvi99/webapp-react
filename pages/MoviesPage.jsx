@@ -7,7 +7,6 @@ export default function MoviesPage() {
 
   function fetchMovies() {
     axios.get("http://localhost:3000/movies").then((response) => {
-      console.log(response.data.results);
       setMovies(response.data.results);
     });
   }
