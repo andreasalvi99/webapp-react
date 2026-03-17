@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import MovieCard from "../components/MovieCard";
 
-export default function () {
+export default function MoviesPage() {
   const [movies, setMovies] = useState([]);
 
   function fetchMovies() {
@@ -16,15 +17,12 @@ export default function () {
     <div className="row row-cols-5 g-3">
       {movies.map((movie) => {
         return (
-          <div className="col">
-            <div class="card h-100">
-              <img src={movie.image} class="card-img-top" alt={movie.title} />
-              <div class="card-body">
-                <h5 class="card-title">{movie.title}</h5>
-                <p class="card-text">{movie.abstract}</p>
-              </div>
-            </div>
-          </div>
+          <MovieCard
+            key={movie.id}
+            image={movie.image}
+            title={movie.title}
+            abstract={movie.abstract}
+          />
         );
       })}
     </div>

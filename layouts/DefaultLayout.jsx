@@ -1,6 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
 
-export default function () {
+export default function DefaultLayout() {
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
