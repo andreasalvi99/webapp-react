@@ -18,7 +18,7 @@ export default function MovieDetailPage() {
       {info && (
         <div className="row row-cols-3">
           <div className="col">
-            <div className="card">
+            <div className="card h-100">
               <img src={info.image} className="card-img-top" alt={info.title} />
               <div className="card-body">
                 <p className="card-text">{info.abstract}</p>
