@@ -21,7 +21,6 @@ export default function MoviesPage() {
             key={movie.id}
             image={movie.image}
             title={movie.title}
-            abstract={movie.abstract}
           />
         );
       })}
