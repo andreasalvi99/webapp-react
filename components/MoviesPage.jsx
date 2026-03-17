@@ -22,9 +22,6 @@ export default function () {
               <div class="card-body">
                 <h5 class="card-title">{movie.title}</h5>
                 <p class="card-text">{movie.abstract}</p>
-                <a href="#" class="btn btn-primary">
-                  Go somewhere
-                </a>
               </div>
             </div>
           </div>
