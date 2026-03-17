@@ -16,29 +16,29 @@ export default function MovieDetailPage() {
   return (
     <>
       {info && (
-        <div className="d-flex gap-3">
-          <div className="card">
-            <img src={info.image} className="card-img-top" alt={info.title} />
-            <div className="card-body">
-              {/* <p className="card-text">{info.abstract}</p> */}
+        <div className="row row-cols-2">
+          <div className="col">
+            <div className="card">
+              <img src={info.image} className="card-img-top" alt={info.title} />
+              <div className="card-body">
+                <p className="card-text">{info.abstract}</p>
+              </div>
             </div>
           </div>
-          <div className="card">
-            <div className="card-body">
-              <h5 className="card-title">Recensioni</h5>
-              <h6 className="card-subtitle mb-2 text-body-secondary">
-                Card subtitle
-              </h6>
-              <p className="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card’s content.
-              </p>
-              <a href="#" className="card-link">
-                Card link
-              </a>
-              <a href="#" className="card-link">
-                Another link
-              </a>
+          <div className="col">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">Recensioni</h5>
+                {info.reviews.map((review) => {
+                  return (
+                    <ul className="list-group my-3" key={review.id}>
+                      <li className="list-group-item">Name: {review.name}</li>
+                      <li className="list-group-item">{review.vote}/5</li>
+                      <li className="list-group-item">{review.text}</li>
+                    </ul>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
