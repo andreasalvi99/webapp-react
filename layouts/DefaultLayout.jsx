@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 export default function () {
   return (
@@ -20,14 +20,14 @@ export default function () {
           <div className="collapse navbar-collapse mx-5" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
+                <NavLink to={"/"} className="nav-link">
                   Home
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <NavLink to={"/movies"} className="nav-link">
                   Catalogo Film
-                </a>
+                </NavLink>
               </li>
             </ul>
           </div>
