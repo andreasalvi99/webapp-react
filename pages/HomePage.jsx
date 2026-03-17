@@ -1,3 +1,7 @@
 export default function () {
-  return <>HomePage</>;
+  return (
+    <>
+      <h1>Homepage</h1>
+    </>
+  );
 }
