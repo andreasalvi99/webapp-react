@@ -29,18 +29,12 @@ export default function MovieDetailPage() {
                 {info.reviews.map((review) => {
                   return (
                     <ul className="list-group my-3" key={review.id}>
-                      <ReviewCard review={review} />
-                      {/* <li className="list-group-item">
-                        <i className="bi bi-person-circle"></i>
-                        <span className="mx-2">{review.name}</span>
-                        <span className="d-block"></span>
-                      </li>
-                      <li className="list-group-item">
-                        Voto: <span className="d-block">{review.vote}/5</span>
-                      </li>
-                      <li className="list-group-item">
-                        Commento: <span className="d-block">{review.text}</span>
-                      </li> */}
+                      <ReviewCard
+                        name={review.name}
+                        date={review.created_at}
+                        vote={review.vote}
+                        text={review.text}
+                      />
                     </ul>
                   );
                 })}
