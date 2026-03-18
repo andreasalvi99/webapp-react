@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import InfoCard from "../components/InfoCard";
 
 export default function MovieDetailPage() {
   const { id } = useParams();
@@ -18,12 +19,7 @@ export default function MovieDetailPage() {
       {info && (
         <div className="row row-cols-3">
           <div className="col">
-            <div className="card h-100">
-              <img src={info.image} className="card-img-top" alt={info.title} />
-              <div className="card-body">
-                <p className="card-text">{info.abstract}</p>
-              </div>
-            </div>
+            <InfoCard info={info} />
           </div>
           <div className="col">
             <div className="card h-100 border-primary">
