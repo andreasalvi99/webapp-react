@@ -21,6 +21,7 @@ export default function HomePage() {
 
   return (
     <>
+      <h1 className="mb-4">In base alle tue preferenze:</h1>
       {suggestedFilm && (
         <div className="row row-cols-3">
           <div className="col">
@@ -36,7 +37,7 @@ export default function HomePage() {
           </div>
           <div className="col">
             <div className="card border-dark mb-3">
-              <div className="card-header">{suggestedFilm.title}</div>
+              <div className="card-header">Overview</div>
               <div className="card-body">
                 <h5 className="card-title">{suggestedFilm.title}</h5>
                 <p className="card-text">{suggestedFilm.description}</p>
