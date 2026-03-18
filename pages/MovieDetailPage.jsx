@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import InfoCard from "../components/InfoCard";
+import ReviewCard from "../components/ReviewCard";
 
 export default function MovieDetailPage() {
   const { id } = useParams();
@@ -28,7 +29,8 @@ export default function MovieDetailPage() {
                 {info.reviews.map((review) => {
                   return (
                     <ul className="list-group my-3" key={review.id}>
-                      <li className="list-group-item">
+                      <ReviewCard review={review} />
+                      {/* <li className="list-group-item">
                         <i className="bi bi-person-circle"></i>
                         <span className="mx-2">{review.name}</span>
                         <span className="d-block"></span>
@@ -38,7 +40,7 @@ export default function MovieDetailPage() {
                       </li>
                       <li className="list-group-item">
                         Commento: <span className="d-block">{review.text}</span>
-                      </li>
+                      </li> */}
                     </ul>
                   );
                 })}
