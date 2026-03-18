@@ -2,3 +2,8 @@
   height: 70px;
   width: 70px;
 }
+
+.movie-poster {
+  height: 296px;
+  object-fit: cover;
+}
