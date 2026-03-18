@@ -5,12 +5,13 @@ export default function MovieCard({ id, image, title }) {
     <div className="col">
       <div className="card" id="card">
         <Link to={"/movies/" + id}>
-          <img
-            src={image}
-            className="card-img-top object-fit-cover"
-            alt={title}
-          />
+          <img src={image} className="card-img-top" alt={title} />
         </Link>
+        <div className="card-body">
+          <p className="card-text text-center fw-bold">
+            <em>{title}</em>
+          </p>
+        </div>
       </div>
     </div>
   );
