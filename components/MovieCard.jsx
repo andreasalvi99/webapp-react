@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
+import Rating from "./Rating";
 
-export default function MovieCard({ id, image, title }) {
+export default function MovieCard({ id, image, title, vote }) {
   return (
     <div className="col">
       <div className="card">
@@ -11,6 +12,9 @@ export default function MovieCard({ id, image, title }) {
           <p className="card-text text-center fw-bold fs-5">
             <em>{title}</em>
           </p>
+          <div className="text-center">
+            <Rating vote={vote} maxVote={5} />
+          </div>
         </div>
       </div>
     </div>
