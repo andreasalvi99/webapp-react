@@ -18,7 +18,9 @@ export default function ReviewCard({ date, vote, text, name }) {
           </div>
           <p className="mb-3">
             {" "}
-            Commento: <span className="d-block">{text}</span>
+            <em>
+              <span className="d-block">"{text}"</span>
+            </em>
           </p>
           <small>
             <Rating vote={vote} maxVote={5} />
