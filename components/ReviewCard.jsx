@@ -1,3 +1,5 @@
+import Rating from "./Rating";
+
 export default function ReviewCard({ date, vote, text, name }) {
   return (
     <>
@@ -19,8 +21,7 @@ export default function ReviewCard({ date, vote, text, name }) {
             Commento: <span className="d-block">{text}</span>
           </p>
           <small>
-            {" "}
-            Voto: <span className="d-block">{vote}/5</span>
+            <Rating vote={vote} maxVote={5} />
           </small>
         </a>
       </div>
