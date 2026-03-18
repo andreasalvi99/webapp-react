@@ -1,3 +1,4 @@
+import Dating from "./Dating";
 import Rating from "./Rating";
 
 export default function ReviewCard({ date, vote, text, name }) {
@@ -14,10 +15,9 @@ export default function ReviewCard({ date, vote, text, name }) {
               <i className="bi bi-person-circle"></i>
               <span className="mx-2">{name}</span>
             </div>
-            <small>{date}</small>
+            <Dating date={date} />
           </div>
           <p className="mb-3">
-            {" "}
             <em>
               <span className="d-block">"{text}"</span>
             </em>
