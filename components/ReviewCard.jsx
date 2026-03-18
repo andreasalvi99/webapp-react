@@ -5,7 +5,7 @@ export default function ReviewCard({ date, vote, text, name }) {
   return (
     <>
       <div className="list-group">
-        <a
+        <div
           href="#"
           className="list-group-item list-group-item-action"
           aria-current="true"
@@ -25,7 +25,7 @@ export default function ReviewCard({ date, vote, text, name }) {
           <small>
             <Rating vote={vote} maxVote={5} />
           </small>
-        </a>
+        </div>
       </div>
     </>
   );
