@@ -1,10 +1,28 @@
+import { useState } from "react";
+
+const initalFormData = {
+  name: "",
+  vote: "",
+  abstract: "",
+};
+
 export default function ReviewForm() {
+  const [formData, setFormData] = useState(initalFormData);
+
+  function handleInputChange(e) {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  }
+
   return (
     <form className="form-control">
       <label htmlFor="name" className="form-label">
         Nome
       </label>
       <input
+        value={formData.name}
+        onChange={handleInputChange}
+        //^
         type="text"
         name="name"
         id="name"
@@ -15,6 +33,9 @@ export default function ReviewForm() {
         Voto
       </label>
       <input
+        value={formData.vote}
+        onChange={handleInputChange}
+        //^
         type="number"
         name="vote"
         id="vote"
@@ -27,6 +48,8 @@ export default function ReviewForm() {
         Descrizione
       </label>
       <textarea
+        value={formData.abstract}
+        onChange={handleInputChange}
         type="text"
         name="abstract"
         id="abstract"
@@ -34,6 +57,7 @@ export default function ReviewForm() {
         rows="4"
         required
       />
+      <button className="btn btn-primary">Invia</button>
     </form>
   );
 }
