@@ -43,7 +43,7 @@ export default function MovieDetailPage() {
             </div>
           </div>
           <div className="col">
-            <ReviewForm />
+            <ReviewForm movieId={id} fetchMovieInfo={fetchMovieInfo} />
           </div>
         </div>
       )}

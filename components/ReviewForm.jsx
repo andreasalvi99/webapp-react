@@ -1,12 +1,13 @@
+import axios from "axios";
 import { useState } from "react";
 
 const initalFormData = {
   name: "",
   vote: "",
-  abstract: "",
+  text: "",
 };
 
-export default function ReviewForm() {
+export default function ReviewForm({ movieId, fetchMovieInfo }) {
   const [formData, setFormData] = useState(initalFormData);
 
   function handleInputChange(e) {
@@ -14,8 +15,21 @@ export default function ReviewForm() {
     setFormData({ ...formData, [name]: value });
   }
 
+  function handleFormSubmit(e) {
+    e.preventDefault();
+
+    console.log(movieId);
+    console.log(formData);
+
+    axios.post(`http://localhost:3000/movies/${movieId}/review`, formData);
+
+    fetchMovieInfo();
+
+    setFormData(initalFormData);
+  }
+
   return (
-    <form className="form-control">
+    <form className="form-control" onSubmit={handleFormSubmit}>
       <label htmlFor="name" className="form-label">
         Nome
       </label>
@@ -48,16 +62,18 @@ export default function ReviewForm() {
         Descrizione
       </label>
       <textarea
-        value={formData.abstract}
+        value={formData.text}
         onChange={handleInputChange}
         type="text"
-        name="abstract"
-        id="abstract"
+        name="text"
+        id="text"
         className="form-control my-3"
         rows="4"
         required
       />
-      <button className="btn btn-primary">Invia</button>
+      <div className="d-flex justify-content-end">
+        <button className="btn btn-primary ">Invia</button>
+      </div>
     </form>
   );
 }
