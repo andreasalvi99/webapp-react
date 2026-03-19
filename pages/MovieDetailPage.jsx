@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import InfoCard from "../components/InfoCard";
 import ReviewCard from "../components/ReviewCard";
+import ReviewForm from "../components/ReviewForm";
 
 export default function MovieDetailPage() {
   const { id } = useParams();
@@ -40,6 +41,9 @@ export default function MovieDetailPage() {
                 })}
               </div>
             </div>
+          </div>
+          <div className="col">
+            <ReviewForm />
           </div>
         </div>
       )}
